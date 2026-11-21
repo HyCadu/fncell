@@ -1,0 +1,30 @@
+.form-section .quote{max-width:720px}
+.quote h2{margin-top:12px}
+.quote form{padding:clamp(16px,4vw,32px);border:1px solid #44403e;border-top-color:#786451;border-radius:14px;background:linear-gradient(145deg,#211e20,#151517 72%)}
+.quote-fields{display:grid;gap:14px}
+.quote label{display:grid;gap:7px;color:#e7e0db;font-weight:600;font-size:.9rem}
+.quote input,.quote select,.quote textarea{font:inherit;font-size:16px;font-weight:400;min-width:0;width:100%;min-height:46px;color:#f3eeeb;background:#111113;border:1px solid #514a47;border-radius:7px;padding:10px 12px}
+.quote textarea{resize:vertical}
+.quote :is(input,textarea,select):focus-visible{outline:2px solid #ffb654;outline-offset:2px}
+.quote details{margin:12px 0 18px;border-bottom:1px solid #383435}
+.quote summary{cursor:pointer;padding:12px 0;color:#d6c3b2}
+.quote details label{margin-bottom:14px}
+.quote button{border:0;cursor:pointer}
+@media(min-width:600px){.quote-fields{grid-template-columns:1fr 1fr}}
+
+.quote-choice{position:relative;min-width:0;align-self:start}
+.quote-choice label{margin:0 0 7px}
+.quote .choice-trigger,.quote-choice select{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:46px;padding:10px 13px;border:1px solid #514a47;border-radius:7px;background:linear-gradient(145deg,#201d1d,#141416);color:#f5f1ec;text-align:left;font:inherit}
+.quote-choice select[hidden],.choice-list[hidden]{display:none}
+.choice-trigger::after,.quote summary::after{content:"";width:7px;height:7px;flex:none;border:solid #f7a433;border-width:0 1.6px 1.6px 0;transform:rotate(45deg);transition:transform .18s ease}
+.quote .choice-trigger[aria-expanded=true]{border-color:#e39532}
+.choice-trigger[aria-expanded=true]::after,.quote details[open]>summary::after{transform:rotate(225deg)}
+.quote .choice-trigger[aria-invalid=true]{outline:2px solid #f6aa48}
+.choice-list{position:relative;z-index:1;margin:5px 0 0;padding:4px;list-style:none;max-height:220px;overflow-y:auto;overscroll-behavior:contain;background:#1b191a;color:#ece8e3;border:1px solid #5d4a36;border-radius:8px}
+.choice-list li{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;padding:8px 10px;border-radius:4px;font-size:.95rem;cursor:pointer}
+.choice-list li.active,.choice-list li:hover{background:#302923}
+.choice-list li[aria-selected=true]{color:#ffb451}
+.choice-list li[aria-selected=true]::after{content:"";width:6px;height:11px;margin-right:4px;border:solid currentColor;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.quote details>.quote-choice{margin-bottom:14px}
+.quote summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;color:#e9d5bc;list-style:none}
+.quote summary::-webkit-details-marker{display:none}
